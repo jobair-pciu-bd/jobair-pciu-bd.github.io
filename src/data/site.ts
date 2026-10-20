@@ -34,8 +34,8 @@ export const siteConfig = {
     heading: "Let's Work Together",
     description:
       'I’m open to new opportunities and long-term collaborations. Feel free to reach out if you need support with Acumatica ERP, e-commerce order operations, or ticket operations.',
-    email: 'jobair.operations@gmail.com',
-    linkedinUrl: 'https://linkedin.com',
+    email: 'jobair002u@gmail.com',
+    linkedinUrl: 'https://www.linkedin.com/in/jobairhossain00/',
     upworkUrl: 'https://upwork.com',
   },
 }
