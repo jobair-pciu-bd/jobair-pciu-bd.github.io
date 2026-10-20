@@ -1,0 +1,93 @@
+# homepage-sections Specification
+
+## Purpose
+
+Defines the structure, behavioral requirements, and content presentation for all homepage sections of the Jobair portfolio website.
+
+## Requirements
+
+### Requirement: Header and Navigation Landmark
+The system SHALL render a persistent or top navigation `<header>` containing the Jobair identity, the subtitle "Acumatica ERP & Ticket Operations Specialist", anchor links (`#home`, `#portfolio`, `#about`, `#contact`), a "Contact Me" CTA button scrolling to `#contact`, and an accessible collapsible mobile navigation menu for screen widths below 768px. The mobile drawer menu SHALL feature a dismissible backdrop overlay, keyboard dismissal upon pressing the `Escape` key, automatic background scroll prevention when open, and minimum 44px touch targets on the menu toggle and navigation links.
+
+#### Scenario: Desktop navigation links
+- **WHEN** the user views the header on a desktop screen (>=768px)
+- **THEN** all four section links and the "Contact Me" button are visible and accessible via keyboard navigation
+
+#### Scenario: Mobile navigation toggle
+- **WHEN** the user views the header on a mobile screen (<768px)
+- **THEN** the full navigation links collapse into a menu button that toggles link visibility upon activation with `aria-expanded` and `aria-controls` properly set
+
+#### Scenario: Mobile navigation Escape key dismissal
+- **WHEN** the mobile navigation drawer is open and the user presses the `Escape` key
+- **THEN** the drawer closes and focus returns to the navigation toggle button
+
+#### Scenario: Mobile navigation backdrop dismissal
+- **WHEN** the mobile navigation drawer is open and the user clicks or taps outside the drawer on the backdrop
+- **THEN** the mobile navigation drawer closes
+
+### Requirement: Hero Presentation and Positioning
+The system SHALL render a hero section identified by `#home` communicating Jobair's primary specialization. It MUST include an "Available for new opportunities" status badge with reduced-motion safe animation, headline "Jobair" with responsive typography scaling (`text-3xl sm:text-5xl lg:text-6xl`) to avoid clipping on 375px/430px viewports, professional title "Acumatica ERP & Ticket Operations Specialist", supporting line "E-commerce Orders | AXS | Ticketmaster", a summary description of 4+ years experience, a primary CTA button "View My Work" navigating to `#portfolio`, a secondary CTA button "Get in Touch" navigating to `#contact`, three professional qualities: "Reliable Operations", "Data-Driven Results", and "Long-Term Collaboration", and an accessible avatar placeholder with semantic `role="img"` and descriptive `aria-label`.
+
+#### Scenario: Hero content and specialization rendering
+- **WHEN** the homepage loads
+- **THEN** the title "Jobair" and specialization "Acumatica ERP & Ticket Operations Specialist" are rendered in high-contrast primary text with responsive sizing that prevents line clipping on narrow viewports
+
+#### Scenario: Hero CTA navigation
+- **WHEN** a user clicks "View My Work"
+- **THEN** the viewport scrolls to the `#portfolio` anchor section
+
+#### Scenario: Hero avatar accessible labeling
+- **WHEN** a screen reader inspects the hero avatar element
+- **THEN** it encounters `role="img"` with an accessible description distinguishing the visual portrait placeholder
+
+### Requirement: Experience Metrics Display
+The system SHALL display four verified metrics below the hero section: "4+ Years Experience", "10+ Platforms Worked", "1000+ Orders & Tickets Handled", and "Reliable Long-Term Collaboration", arranged in a responsive grid (4 columns on desktop, 2 columns on tablet, 1 column or 2 columns on mobile).
+
+#### Scenario: Metrics rendering and accuracy
+- **WHEN** the metrics section is viewed
+- **THEN** all four verified metric cards display their respective numeric values and descriptive labels
+
+### Requirement: Selected Portfolio Cards
+The system SHALL render four distinct portfolio cards in the `#portfolio` section representing Jobair's core experience in prioritized order:
+1. Acumatica ERP Specialist (Multi-Channel E-commerce Order Processing & Order Management)
+2. AXS Ticket Operations (Event Research, Pricing & Inventory Management)
+3. Ticketmaster Ticket Operations (Research, Pricing & Market Analysis)
+4. Multi-Platform Ticket Operations (AXS, Ticketmaster, StubHub, SeatGeek & More)
+The Acumatica ERP card MUST possess the strongest visual priority using prominent styling, primary positioning, and distinct accent border treatment. Each card MUST display concise summary copy, category badge, and associated platform tags by default on the homepage. Granular operational responsibilities from PRD.md MUST be housed inside an accessible expandable disclosure ("View Details" / "Hide Details") per card, maintaining a compact initial layout while providing full operational details upon user interaction.
+
+#### Scenario: Primary Acumatica portfolio card presentation
+- **WHEN** the portfolio section is viewed
+- **THEN** Acumatica ERP Specialist is rendered as the first portfolio card with the strongest visual priority distinguishing it from the ticketing cards
+
+#### Scenario: Ticketing portfolio cards presentation
+- **WHEN** the portfolio section is viewed
+- **THEN** separate cards for AXS, Ticketmaster, and Multi-Platform operations are rendered with their respective platform badges and concise summaries
+
+#### Scenario: Expandable details toggle for granular responsibilities
+- **WHEN** a user activates the "View Details" control on any portfolio card
+- **THEN** the card expands to reveal the full list of operational responsibilities documented in PRD.md with updated aria-expanded state
+
+### Requirement: About Section and Operational Strengths
+The system SHALL render an About section identified by `#about` describing Jobair's operational background, focus on accuracy, multi-platform workflows, and SOP compliance.
+
+#### Scenario: About copy and strength areas
+- **WHEN** the user navigates to `#about`
+- **THEN** the professional narrative and core operational strengths (attention to detail, inventory monitoring, SOP compliance) are legibly displayed
+
+### Requirement: Categorized Tools and Platforms
+The system SHALL render a Tools and Platforms section grouping supported tools into "ERP & E-commerce" (Acumatica, Amazon, Walmart, Wayfair, Faire, Etsy, WooCommerce) and "Ticketing" (AXS, Ticketmaster, StubHub, SeatGeek, Gametime, TickPick, TicketNetwork, GoTickets) as clean badges. Platform logos and badges MUST NOT clutter the hero section.
+
+#### Scenario: Tools section categorization
+- **WHEN** the tools section is rendered
+- **THEN** platforms are organized into ERP/E-commerce and Ticketing groups with distinct badges
+
+### Requirement: Contact Section and Footer Landmark
+The system SHALL render a Contact section identified by `#contact` featuring "Let's Work Together" messaging, availability statement, and verified contact links (Email, LinkedIn, Upwork) equipped with descriptive `aria-label` attributes distinguishing external link destinations. The page MUST conclude with a semantic `<footer>` landmark containing copyright, navigation links, and platform references, with interactive touch targets meeting accessibility height baselines.
+
+#### Scenario: Contact section links
+- **WHEN** a user reaches the `#contact` section
+- **THEN** clickable contact channels for Email, LinkedIn, and Upwork are accessible, open appropriately, and provide descriptive accessible labels for assistive technologies
+
+#### Scenario: Footer landmark rendering
+- **WHEN** the footer is rendered
+- **THEN** copyright text and anchored navigation links are present within `<footer>` with compliant contrast and spacing

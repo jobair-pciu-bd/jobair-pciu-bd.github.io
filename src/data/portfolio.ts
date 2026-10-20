@@ -1,0 +1,98 @@
+import type { PortfolioItem } from '../types'
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: 'acumatica',
+    category: 'ERP',
+    title: 'Acumatica ERP Specialist',
+    subtitle: 'Multi-Channel E-commerce Order Processing & Order Management',
+    featured: true,
+    summary:
+      'Process and manage orders across multiple e-commerce channels using Acumatica ERP, including inventory checks, SKU verification, backorders, scheduling, fulfillment coordination, and duplicate-order prevention.',
+    platforms: [
+      'Acumatica',
+      'Amazon',
+      'Walmart',
+      'Wayfair',
+      'Faire',
+      'Etsy',
+      'WooCommerce',
+      'Couronne Company Retail',
+      'MosaicBirdsCo',
+      'CouronneCoShop',
+      'Willow Commerce',
+    ],
+    responsibilities: [
+      'Acumatica sales order processing',
+      'Multi-channel e-commerce order management',
+      'Amazon, Walmart, Wayfair, Faire, Etsy & WooCommerce order processing',
+      'Order import and review & duplicate order checking',
+      'Product and SKU verification & inventory availability checking',
+      'Backorder handling, restock management & sales order confirmation',
+      'Order scheduling, shipping coordination & fulfillment coordination',
+      'Order status management, SOP compliance & accurate data management',
+    ],
+  },
+  {
+    id: 'axs',
+    category: 'Ticket Operations',
+    title: 'AXS Ticket Operations',
+    subtitle: 'Event Research, Pricing & Inventory Management',
+    summary:
+      'Research events, evaluate inventory, review sections and rows, manage ticket listings, monitor pricing, track market activity, and analyze sales performance on AXS.',
+    platforms: ['AXS'],
+    responsibilities: [
+      'AXS event research & ticket inventory research',
+      'Section, row, and seat-level analysis',
+      'Spec ticket listing, ticket pricing & market comparison',
+      'Listing, unlisting, relisting & batch price updates',
+      'Broadcast and unbroadcast distribution management',
+      'Event, sold-out, price-drop & broker activity monitoring',
+      'Pending and available order monitoring',
+      'Sales tracking, profit tracking & P&L analysis',
+    ],
+  },
+  {
+    id: 'ticketmaster',
+    category: 'Ticket Operations',
+    title: 'Ticketmaster Ticket Operations',
+    subtitle: 'Research, Pricing & Market Analysis',
+    summary:
+      'Analyze Ticketmaster inventory, evaluate sections and rows, compare market prices, monitor listings, identify pricing opportunities, and track ticket performance.',
+    platforms: ['Ticketmaster'],
+    responsibilities: [
+      'Ticketmaster event research & ticket inventory analysis',
+      'Section and row comparative evaluation',
+      'Market price comparison & ticket pricing analysis',
+      'Inventory, price-drop, sold-out & sell-through monitoring',
+      'Order monitoring & sales tracking',
+      'Profit analysis & margin analysis',
+    ],
+  },
+  {
+    id: 'multi-platform',
+    category: 'Ticket Operations',
+    title: 'Multi-Platform Ticket Operations',
+    subtitle: 'AXS, Ticketmaster, StubHub, SeatGeek & More',
+    summary:
+      'Support ticket operations across multiple platforms through research, inventory monitoring, pricing, listing management, competitor tracking, order monitoring, and performance analysis.',
+    platforms: [
+      'AXS',
+      'Ticketmaster',
+      'StubHub',
+      'SeatGeek',
+      'Gametime',
+      'TickPick',
+      'TicketNetwork',
+      'GoTickets',
+    ],
+    responsibilities: [
+      'Ticket research & event monitoring across ticketing platforms',
+      'Inventory management & multi-channel ticket listing',
+      'Pricing & secondary market analysis',
+      'Competitor monitoring & broker monitoring',
+      'Order monitoring, sold-out tracking & sell-through tracking',
+      'Consolidated sales tracking & profit tracking',
+    ],
+  },
+]
